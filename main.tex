@@ -1,0 +1,35 @@
+\documentclass[10pt,a4paper,twoside]{report}
+\usepackage[utf8]{inputenc}
+%Algemene documentinstellingen als dubbelzijdig, codering, rapportsoort etc.
+
+\usepackage{import} %Om het rapport in verschillende delen op te delen en in één bestand te importeren
+\usepackage{preamble} %Importeert alle instellingen in preamble.sty
+
+
+\begin{document}
+\includepdf{./Titelpagina/omslag.pdf} %Omslagblad
+\includepdf{./Titelpagina/legepagina.pdf} %Lege pagina na omslag
+\includepdf{./Titelpagina/titelpagina.pdf} %Titelpagina
+%De eerste drie pagina's worden geïmporteerd als PDF want deze pagina's zijn oneside in de preamble en dit Tex-bestand is twoside, zie eerste regel
+
+\import{./Hoofdstukken/}{A-Voorwoord.tex}
+\import{./Hoofdstukken/}{B-Samenvatting.tex}
+
+\setcounter{page}{5} %Door importeren van PDF klopt paginanummer niet, hierbij gecorrigeerd
+\tableofcontents
+\thispagestyle{empty}
+
+\import{./Hoofdstukken/}{C-Inleiding.tex}
+\import{./Hoofdstukken/}{D-.tex}
+\import{./Hoofdstukken/}{E-.tex}
+\import{./Hoofdstukken/}{F-.tex}
+\import{./Hoofdstukken/}{G-.tex}
+\import{./Hoofdstukken/}{H-.tex}
+
+%\listoffigures
+%\listoftables
+\printbibliography
+\addcontentsline{toc}{chapter}{Bibliografie}
+
+\import{./Hoofdstukken/}{Z-Bijlagen.tex}
+\end{document}

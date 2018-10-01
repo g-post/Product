@@ -1,0 +1,50 @@
+\ProvidesPackage{preamble} %Betekent dat al onderstaande tekst wordt ingevoegd wanneer \usepackage{preamble} wordt gebruikt
+
+\usepackage[dutch]{babel}
+\usepackage[backend=biber,style=apa,sorting=nty,natbib]{biblatex}
+\addbibresource{bibliografie.bib}
+\DeclareLanguageMapping{dutch}{dutch-apa}
+%APA-richtlijnen en taalinstellingen
+
+\usepackage{afterpage}
+\newcommand\blankpage{
+    \null
+    \thispagestyle{empty}
+    \newpage}
+%Code om blanke pagina's in te voegen
+%Code is \afterpage{\blankpage}
+
+\usepackage{graphicx}
+\graphicspath{ {./Images/} }
+%Om figuren in te voegen
+
+\usepackage{fancyhdr} %Voet- en kopteksten
+\usepackage{csquotes} %Quotes die Babel respecteren
+\usepackage{lastpage} %Variabele voor paginanummering (om te zeggen bijv. pagina 5 van 63)
+\usepackage{booktabs} %Tabeloptimalisatie en opmaak
+\usepackage{pdfpages} %Samenvoegen van PDF's 
+\usepackage{lipsum} %Lorem ipsum
+\usepackage{color} %Tekstkleur
+\usepackage{microtype} %Tegen de underfull errors en om justifying te helpen
+\usepackage[pages=some]{background} %Achtergrondafbeeldingen bij voorwoord
+\usepackage{comment} %Om delen van de tekst uit te schakelen
+\usepackage{import} %Om het rapport in verschillende delen op te delen en in één bestand te importeren
+
+\usepackage[linktoc=all]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=cyan,
+    urlcolor=cyan,
+    citecolor=black,
+    breaklinks=true,
+    bookmarksopen=true}
+%Links naar websites, bronnen, inhoudsopgave, pagina's etc.
+
+\input{./Titelpagina/Definities.tex} %Alle variabelen in het document als titel, datum etc.
+\newcounter{bijlage}[section] %Om het aantal bijlages bij te houden
+
+\title{\titel}
+\author{\auteur}
+\date{\datum}
+%Documenteigenschappen worden hier gekopieerd uit Definities.tex

@@ -1,0 +1,57 @@
+%Dit is een standalone TeX. Deze wordt gecompiled worden als main.tex een andere preamble heeft als dit bestand, bijvoorbeeld oneside op omslagpagina, twoside in main.tex
+
+\documentclass[10pt,a4paper,oneside]{report}
+\usepackage[utf8]{inputenc} %Codering
+\usepackage[dutch]{babel} %Taalinstelling
+\usepackage{biblatex} %Om een of andere reden wil deze TeX niet compilen zonder deze package, niet nodig
+\usepackage{csquotes} %Deze is ook nodig om errors tegen te gaan, hoewel hij zelf niet nodig is
+
+\usepackage{graphicx}
+\graphicspath{ {../Images/} }
+
+\usepackage[linktoc=all]{hyperref}
+\hypersetup{colorlinks=false} %Links naar websites, bronnen, inhoudsopgave, pagina's etc.
+
+\usepackage[a4paper, margin=2.5cm]{geometry}
+
+\usepackage{titling} %Titels voor op de titelpagina
+\input{../Titelpagina/Definities.tex}
+
+\title{\titel}
+\author{\auteur}
+\date{\datum}
+%EIND VAN PREAMBLE
+
+
+\begin{document}
+\begin{titlepage}
+    \vspace*{-0.9cm}
+    \hfill
+    \includegraphics[width=0.35\textwidth]{windesheim} \\
+    
+    \begin{center}
+    \vspace*{3cm}
+    {\huge\thetitle}
+    
+    \vspace*{0.4cm}
+    \textnormal{\ondertitel}
+    \end{center}
+    
+    \vfill
+    \raggedleft
+    \theauthor \\
+    \thedate, \plaats \\
+    
+    \vspace{\vertspace}
+    \school \\
+    \domein \\
+
+    \vspace{\vertspace}
+    Eerste begeleider: \begeleidereen \\
+    Tweede begeleider: \begeleidertwee \\
+    \organisatie \\
+
+\end{titlepage}
+%Titelpagina
+
+\end{document}
