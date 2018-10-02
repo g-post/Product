@@ -17,19 +17,19 @@
 
 \setcounter{page}{5} %Door importeren van PDF klopt paginanummer niet, hierbij gecorrigeerd
 \tableofcontents
-\thispagestyle{empty}
+\thispagestyle{empty} %Geen paginanummer op de pagina van de ToC
 
 \import{./Hoofdstukken/}{C-Inleiding.tex}
-\import{./Hoofdstukken/}{D-.tex}
-\import{./Hoofdstukken/}{E-.tex}
-\import{./Hoofdstukken/}{F-.tex}
-\import{./Hoofdstukken/}{G-.tex}
-\import{./Hoofdstukken/}{H-.tex}
+\import{./Hoofdstukken/}{Dk-Bedrijfsachtergrond.tex}
+\import{./Hoofdstukken/}{E-Probleemanalyse.tex}
+\import{./Hoofdstukken/}{F-Methode.tex}
+\import{./Hoofdstukken/}{G-Resultaten.tex}
+\import{./Hoofdstukken/}{H-Conclusie.tex}
 
 %\listoffigures
 %\listoftables
 \printbibliography
-\addcontentsline{toc}{chapter}{Bibliografie}
+\addcontentsline{toc}{chapter}{Bibliografie} %Ongenummerde hoofdstukken komen niet in ToC, met deze code wel
 
 \import{./Hoofdstukken/}{Z-Bijlagen.tex}
 \end{document}
