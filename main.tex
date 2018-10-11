@@ -1,10 +1,12 @@
+%Welkom bij mijn afstudeerscriptie, vragen naar gerrit94@hotmail.com. Dit project moet gecompileerd worden met pdfLaTeX.
+
 \documentclass[10pt,a4paper,twoside]{report}
 \usepackage[utf8]{inputenc}
 %Algemene documentinstellingen als dubbelzijdig, codering, rapportsoort etc.
 
 \usepackage{import} %Om het rapport in verschillende delen op te delen en in één bestand te importeren
 \usepackage{preamble} %Importeert alle instellingen in preamble.sty
-
+\import{./Hoofdstukken/}{1-Begrippenlijst.tex} %Importeren van de woordenlijst
 
 \begin{document}
 \includepdf{./Titelpagina/omslag.pdf} %Omslagblad
@@ -26,6 +28,7 @@
 \import{./Hoofdstukken/}{G-Resultaten.tex}
 \import{./Hoofdstukken/}{H-Conclusie.tex}
 
+\printglossary[title=Begrippenlijst]
 %\listoffigures
 %\listoftables
 \printbibliography
