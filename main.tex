@@ -14,11 +14,15 @@
 \includepdf{./Titelpagina/legepagina.pdf} %Lege pagina na omslag
 \includepdf{./Titelpagina/titelpagina.pdf} %Titelpagina
 %De eerste drie pagina's worden geïmporteerd als PDF want deze pagina's zijn oneside in de preamble en dit Tex-bestand is twoside, zie eerste regel
+\setcounter{page}{4} %Door importeren van PDF klopt paginanummer niet, hierbij gecorrigeerd
 
 \import{./Hoofdstukken/}{A-Voorwoord.tex}
-\import{./Hoofdstukken/}{B-Samenvatting.tex}
+\addcontentsline{toc}{chapter}{Voorwoord} %Ongenummerde hoofdstukken komen niet in ToC, met deze code wel
 
-\setcounter{page}{5} %Door importeren van PDF klopt paginanummer niet, hierbij gecorrigeerd
+\import{./Hoofdstukken/}{B-Samenvatting.tex}
+\addcontentsline{toc}{chapter}{Samenvatting} %Ongenummerde hoofdstukken komen niet in ToC, met deze code wel
+
+\setcounter{tocdepth}{1}
 \tableofcontents
 \thispagestyle{empty} %Geen paginanummer op de pagina van de ToC
 
